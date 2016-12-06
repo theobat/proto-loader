@@ -13,7 +13,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.proto$/,
-				loader: path.join(__dirname, "..")
+				loaders: ['json-loader' , path.join(__dirname, "..")]
 			}
 		]
 	}

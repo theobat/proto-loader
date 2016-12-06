@@ -10,18 +10,12 @@ npm install proto-loader
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
 ``` javascript
-/*
-protobufjs has a light build that does not include code for parsing .proto
-files. The extra code is not typically necessary if you're using this loader,
-but if you still need it, you can change the below line to:
-var ProtoBuf = require('protobufjs');
-*/
-var ProtoBuf = require('protobufjs/dist/protobuf-light');
+var protobuf = require('protobufjs');
 
-var protoDefinition = require('proto!./message.proto');
-// => returns object converted from message.proto, resolves imports
+var protoDefinition = require('json!proto!./message.proto');
+// => returns json object converted from message.proto, resolves imports
 
-var builder = ProtoBuf.loadJson(protoDefinition);
+var root = protobuf.Root.fromJSON(protoDefinition);
 //...
 ```
 
@@ -33,7 +27,7 @@ module.exports = {
     loaders: [
       {
         test: /\.proto$/,
-        loader: "proto-loader"
+        loaders: ['json-loader', "proto-loader"]
       }
     ]
   }
