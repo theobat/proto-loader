@@ -35,7 +35,7 @@ var message = protoValue.create(person);
 
 //alternatively use: 
 //var valueAsBuffer = protoValue.encode({person: {lastName: "V2",  firstName: "C2" }}).finish();
-var valueAsBuffer = jsValue.encode({person: person}).finish();
+var valueAsBuffer = protoValue.encode({person: person}).finish();
 
 console.log('\n\Encoded Value\n')
 

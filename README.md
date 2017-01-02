@@ -36,6 +36,13 @@ module.exports = {
 
 Then you only need to write: `require("./message.proto")`
 
+## Run example with
+
+```
+webpack
+node ./out/bundle.js
+```
+
 
 ## License
 MIT (http://www.opensource.org/licenses/mit-license.php)
