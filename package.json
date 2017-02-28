@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "json-loader": "^0.5.4",
-    "webpack": "^1.13.3"
+    "webpack": "^2.2.1"
   },
   "dependencies": {
     "loader-utils": "^0.2.16",
-    "protobufjs": "^6.3.1"
+    "protobufjs": "^6.6.3"
   }
 }
